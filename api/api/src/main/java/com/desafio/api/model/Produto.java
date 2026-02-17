@@ -1,8 +1,13 @@
 package com.desafio.api.model;
 
-import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,6 +28,6 @@ public class Produto {
     @Column(name = "qtd_estoque")
     private Integer qtdEstoque;
 
-    @Column(name = "data_cadastro)")
+    @Column(name = "data_cadastro")
     private LocalDateTime dataCadastro = LocalDateTime.now();
 }
