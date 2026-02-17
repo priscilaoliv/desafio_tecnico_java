@@ -27,7 +27,7 @@ public class ProdutoController {
         return service.salvar(produto);
     }
 
-    @GetMapping
+    @GetMapping("/buscar")
     public List<Produto> buscar(@RequestParam(required = false) String descricao,
             @RequestParam(required = false) Long id) {
         return service.buscarPorDescricaoOuId(descricao, id);

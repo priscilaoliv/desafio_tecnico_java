@@ -33,7 +33,7 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/busca")
+    @GetMapping("/buscar")
     public List<Cliente> buscar(@RequestParam(required = false) String nome,
             @RequestParam(required = false) Long id) {
         return service.buscarPorNomeOuId(nome, id);
