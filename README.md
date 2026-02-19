@@ -52,7 +52,7 @@ Este projeto é um dashboard de vendas completo que integra uma API desenvolvida
 Console do Banco H2: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:desafiodb).
 
 3. Configurando o Frontend (React)
-   Entre na pasta frontend.
+Entre na pasta frontend.
 
 Instale as dependências:
 
