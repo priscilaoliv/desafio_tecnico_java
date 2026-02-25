@@ -1,78 +1,69 @@
-# Sistema de Gestão de Vendas ( api java com interface)
+Sistema de Gestão de Vendas (API Java com Interface)
+Este projeto é um dashboard de vendas completo que integra uma API desenvolvida em Java (Spring Boot) com um frontend moderno e responsivo em React (Vite + TypeScript). O objetivo principal é visualizar os dados dos clientes, seus produtos e o valor final.
 
-Este projeto é um dashboard de vendas completo que integra uma API desenvolvida em **Java (Spring Boot)** com um frontend moderno e responsivo em **React (Vite + TypeScript)**. O objetivo principal é visualizar os dados dos clientes, seus produtos e o valor final.
+Tecnologias Utilizadas:
 
----
+Backend
+Java 17: Linguagem principal.
 
-## Tecnologias Utilizadas
+Spring Boot 3.x: Framework para criação da API REST.
 
-### Backend
+Spring Data JPA / Hibernate: Para persistência e mapeamento objeto-relacional.
 
-- **Java 17**: Linguagem principal.
-- **Spring Boot 3.x**: Framework para criação da API REST.
-- **Spring Data JPA / Hibernate**: Para persistência e mapeamento objeto-relacional.
-- **H2 Database**: Banco de dados em memória para agilidade no desenvolvimento.
-- **Native Queries (SQL)**: Utilizadas para extrair relatórios personalizados de soma de vendas.
+H2 Database: Banco de dados em memória.
 
-### Frontend
+Native Queries (SQL): Para relatórios personalizados de soma de vendas.
 
-- **React 18** (Vite): Framework de interface.
-- **TypeScript**: Tipagem estática para maior segurança do código.
-- **Tailwind CSS v4**: Estilização moderna e responsiva baseada em utilitários.
-- **Fetch API**: Comunicação assíncrona com o backend.
+Frontend
+React 18 (Vite) e TypeScript.
 
----
+Tailwind CSS v4: Estilização moderna.
 
-## Funcionalidades
+Fetch API: Comunicação com o backend.
 
-- **Dashboard de Clientes:** Exibição dinâmica de cards com o total gasto por cada cliente.
-- **Integração Full Stack:** Consumo de API REST em tempo real.
-- **Tratamento de Dados:** Formatação de moedas (BRL) e tratamento de nomes no frontend.
-- **Relatórios:** Soma automática de pedidos vinculada a cada cliente via banco de dados.
+Como Testar a API (Postman):
+Para facilitar a validação das rotas, disponibilizei os arquivos de configuração do Postman na pasta /postman (ou na raiz do projeto).
 
----
+Importe os arquivos: No Postman, clique em Import e selecione os arquivos:
 
-## Como rodar o projeto
+Desafio_Vendas_Postman_Collection.json
 
-### 1. Pré-requisitos
+Desenvolvimento_Local.json
 
-- Java 17 ou superior.
-- Node.js (v18 ou superior).
-- Maven (opcional, pode usar o wrapper `./mvnw`).
+Selecione o Ambiente: No canto superior direito do Postman, mude de "No Environment" para "Desenvolvimento local".
 
-### 2. Configurando o Backend (Java)
+Use as Variáveis: As rotas já estão configuradas com {{base_url}}, o que permite rodar os testes instantaneamente sem configurar IPs ou portas manualmente.
 
-1. Entre na pasta `api` (ou onde está o seu `pom.xml`).
-2. Execute o servidor:
-   ```bash
-   ./mvnw spring-boot:run
-   O servidor subirá em: http://localhost:8080.
-   ```
+Como Rodar o Projeto:
 
-Console do Banco H2: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:desafiodb).
+1. Backend (Java)
+   Entre na pasta do backend.
 
-3. Configurando o Frontend (React)
-Entre na pasta frontend.
+Execute: ./mvnw spring-boot:run
 
-Instale as dependências:
+O servidor subirá em: http://localhost:8080
 
-Bash
-npm install
-Inicie a aplicação:
+H2 Console: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:desafiodb)
 
-Bash
-npm run dev
-O dashboard estará disponível em: http://localhost:5173.
+2. Frontend (React)
+   Entre na pasta frontend.
 
-Fluxo de Teste
-Como o banco de dados H2 é volátil (reinicia vazio), siga esta ordem para ver os dados no dashboard:
+Instale as dependências: npm install
 
-Cadastre um Cliente (POST em /api/clientes).
+Inicie: npm run dev
 
-Cadastre um Produto (POST em /api/produtos).
+O dashboard estará em: http://localhost:5173
 
-Cadastre um Pedido vinculado ao cliente e produto (POST em /api/pedidos).
+Fluxo de Teste Sugerido:
 
-Clique no botão "Atualizar Dados" no Dashboard React.
+Como o banco H2 reinicia vazio, use a Collection do Postman na seguinte ordem:
+
+POST - Cadastrar Novo Cliente
+
+POST - Cadastrar Novo Produto
+
+POST - Realizar Pedido (Isso dará baixa no estoque e gerará o financeiro).
+
+Dashboard: Clique em "Atualizar Dados" no React para ver os cards atualizados.
 
 Desenvolvido por Priscila Oliveira.
