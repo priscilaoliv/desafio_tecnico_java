@@ -22,17 +22,17 @@ Tailwind CSS v4: Estilização moderna.
 Fetch API: Comunicação com o backend.
 
 Como Testar a API (Postman):
-Para facilitar a validação das rotas, disponibilizei os arquivos de configuração do Postman na pasta /postman (ou na raiz do projeto).
+Para facilitar a validação das rotas, disponibilizei os arquivos de configuração na pasta raiz do projeto:
 
-Importe os arquivos: No Postman, clique em Import e selecione os arquivos:
+Importe os arquivos: No Postman, clique em Import e selecione:
 
-Desafio_Vendas_Postman_Collection.json
+Desafio API - Sistemas de Vendas.postman_collection.json
 
-Desenvolvimento_Local.json
+Desenvolvimento local.postman_environment.json (ou o nome exato que salvou do ambiente).
 
 Selecione o Ambiente: No canto superior direito do Postman, mude de "No Environment" para "Desenvolvimento local".
 
-Use as Variáveis: As rotas já estão configuradas com {{base_url}}, o que permite rodar os testes instantaneamente sem configurar IPs ou portas manualmente.
+Use as Variáveis: As rotas já estão configuradas com {{base_url}}, o que permite rodar os testes instantaneamente.
 
 Como Rodar o Projeto:
 
